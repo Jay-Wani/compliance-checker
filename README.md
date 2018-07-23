@@ -7,31 +7,6 @@ The python module can be used as a command-line tool or as a
 library that can be integrated into other software.
 
 
-It currently supports the following sources and standards:
-
-| Standard                                                                                                                            | Source                                                            | .nc/OPeNDAP/.cdl | SOS                             |
-| ----------------------------------------------------------------------------------------------------                                | -----------                                                       | ------           | ------------------------------- |
-| [ACDD (1.1, 1.3)](http://wiki.esipfed.org/index.php/Attribute_Convention_for_Data_Discovery_1-3)                                    | Built-in                                                          | X                | -                               |
-| [CF (1.6)](http://cfconventions.org/cf-conventions/v1.6.0/cf-conventions.html)                                                      | Built-in                                                          | X                | -                               |
-| IOOS SOS                                                                                                                            | Built-in                                                          | -                | GetCapabilities, DescribeSensor |
-| [IOOS (1.1)](https://ioos.github.io/ioos-netcdf/ioos-netcdf-metadata-description-v1-1.html#ioos-netcdf-metadata-profile-attributes) | Built-in                                                          | X                | -                               |
-| [Glider DAC](https://github.com/ioos/ioosngdac/wiki/NGDAC-NetCDF-File-Format-Version-2)                                             | [ioos/cc-plugin-glider](https://github.com/ioos/cc-plugin-glider) | X                | -                               |
-| [NCEI (1.1, 2.0)](https://www.nodc.noaa.gov/data/formats/netcdf/v2.0/)                                                              | [ioos/cc-plugin-ncei](https://github.com/ioos/cc-plugin-ncei)     | X                | -                               |
-
-
-## Advice to data providers
-
-While the command-line version of this tool can be run in a loop, it is not necessary to check
-every file if they are all created the same way. In short, this tool is not meant for
-identifying bugs in your data processing stream. It is, however, intended to help you identify
-your process procedure compliance to the standards.  If you change your processing procedure
-for any reason it would be worth your while to run one file through the Compliance Checker to
-insure you procedure change does not impact your file’s compliance.
-
-If you feel you will need to run a batch of files through the Compliance Checker, please contact
-the IOOS Program Office Operations Division for assistance.
-
-
 
 ## Usage
 Select the test you want to run from the dropdown menu. Then, either upload your dataset or provide a url to a
@@ -299,74 +274,3 @@ specifications for preparing data to be submitted to different data assembly cen
 The version numbering of these plug-ins are not necessarily link to the version of the
 master Compliance Checker, but they are all designed to run with the master Compliance Checker tool.
 
-### Current Plug-in Releases:
-
-- [GliderDAC](https://github.com/ioos/cc-plugin-glider/releases)
-
-This is a checker for [GliderDAC](https://github.com/ioos/ioosngdac/wiki/NGDAC-NetCDF-File-Format-Version-2) files
-
-- [NCEI](https://github.com/ioos/cc-plugin-ncei/releases) - [link](https://github.com/ioos/cc-plugin-ncei)
-
-This is a checker for NCEI netCDF Templates [v1.1](https://www.nodc.noaa.gov/data/formats/netcdf/v1.1/) and [v2.0](https://www.nodc.noaa.gov/data/formats/netcdf/v2.0/) files.
-
-These plug-ins must be installed separately but work on top of the base compliance checker software.
-
-```
-pip install cc-plugin-ncei
-```
-
-Check to see if it installed correctly, list the tests:
-
-```
-compliance-checker -l
-```
-
-You should see
-
-```
- IOOS compliance checker available checker suites (code version):
- - ncei-grid (2.1.0)
- - ncei-grid:1.1 (2.1.0)
- - ncei-grid:2.0 (2.3.0)
- - ncei-grid:latest (2.1.0)
- - ncei-point (2.3.0)
- - ncei-point:1.1 (2.1.0)
- - ncei-point:2.0 (2.3.0)
- etc ....
-```
-
-Once installing the plug-in the usage is similar to the built in checkers.
-
-### Examples of how to use the Plug-Ins
-
-1. Run the NCEI Point check on a THREDDS endpoint
-
-```python
-compliance-checker -t ncei-point -v "https://data.nodc.noaa.gov/thredds/dodsC/testdata/mbiddle/GOLD_STANDARD_NETCDF/1.1/NODC_point_template_v1.1_2016-06-15_133710.844375.nc"
-```
-
-2. Run NCEI Trajectory Profile Orthogonal Check on local dataset
-
-```python
-compliance-checker -t ncei-trajectory-profile-orthogonal -v ~/data/sample-trajectory-profile.nc
-
-```
-
-3. Outputting JSON from a gridded file check
-```
-compliance-checker -t ncei-grid -f json -o ~/Documents/sample_grid_report.json ~/Documents/sample_grid_report.nc
-```
-
-
-## Contributors
-
-- [Dave Foster](https://github.com/daf) &lt;dave@axiomdatascience.com&gt;
-- [Dan Maher](https://github.com/danieljmaher) &lt;daniel.maher@gdit.com&gt;
-- [Luke Campbell](https://github.com/lukecampbell) &lt;luke.campbell@gdit.com&gt;
-- [Kyle Wilcox](https://github.com/kwilcox) &lt;kyle@axiomdatascience.com&gt;
-- [Ben Adams](https://github.com/benjwadams) &lt;ben.adams@rpsgroup.com&gt;
-- [Bob Fratantonio](https://github.com/bobfrat) &lt;robert.fratantonio@rpsgroup.com&gt;
-
-And many more testers!
-
-Portions of the CF checker are based on Michael Decker's work, http://repositories.iek.fz-juelich.de/hg/CFchecker/
