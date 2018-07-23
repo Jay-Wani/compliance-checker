@@ -4,11 +4,8 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/lcc9co38pi6o45ho/branch/master?svg=true)](https://ci.appveyor.com/project/ocefpaf/compliance-checker/branch/master)
 
 The IOOS Compliance Checker is a python based tool for data providers to check
-for completeness and community standard compliance of local or remote
-[netCDF](https://en.wikipedia.org/wiki/NetCDF) files against
-[CF](https://en.wikipedia.org/wiki/NetCDF) and
-[ACDD](http://wiki.esipfed.org/index.php/Attribute_Convention_for_Data_Discovery_1-3)
-file standards. The python module can be used as a command-line tool or as a
+for completeness and community standard compliance of infrastructure - local or remote
+The python module can be used as a command-line tool or as a
 library that can be integrated into other software.
 
 A [web-based version](https://data.ioos.us/compliance/index.html) of the Compliance
