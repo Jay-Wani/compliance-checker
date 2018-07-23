@@ -1,9 +1,9 @@
-# IOOS Compliance Checker
+# Compliance Checker
 
 [![Build Status](https://travis-ci.org/ioos/compliance-checker.svg)](https://travis-ci.org/ioos/compliance-checker)
 [![Build status](https://ci.appveyor.com/api/projects/status/lcc9co38pi6o45ho/branch/master?svg=true)](https://ci.appveyor.com/project/ocefpaf/compliance-checker/branch/master)
 
-The IOOS Compliance Checker is a python based tool for data providers to check
+The Compliance Checker is a python based tool for data providers to check
 for completeness and community standard compliance of infrastructure - local or remote
 The python module can be used as a command-line tool or as a
 library that can be integrated into other software.
