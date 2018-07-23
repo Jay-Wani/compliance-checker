@@ -15,7 +15,7 @@ remote dataset (OPeNDAP) and click 'Submit'.
 The output of the Compliance Checker will give you a comprehensive list of issues and the actions needed to correct them.
 You may download the Compliance Checker report as a text file by clicking the 'Download Report' button
 
-![Compliance-Checker-Web](https://user-images.githubusercontent.com/5702672/30527267-b4bb136c-9bf4-11e7-8345-dd9b8e2e859f.png)
+![Compliance-Checker-Web](https://github.com/Jay-Wani/compliance-checker/blob/master/Compliance.PNG)
 
 ## API
 
