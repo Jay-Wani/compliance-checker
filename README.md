@@ -1,17 +1,10 @@
 # Compliance Checker
 
-[![Build Status](https://travis-ci.org/ioos/compliance-checker.svg)](https://travis-ci.org/ioos/compliance-checker)
-[![Build status](https://ci.appveyor.com/api/projects/status/lcc9co38pi6o45ho/branch/master?svg=true)](https://ci.appveyor.com/project/ocefpaf/compliance-checker/branch/master)
 
 The Compliance Checker is a python based tool for data providers to check
 for completeness and community standard compliance of infrastructure - local or remote
 The python module can be used as a command-line tool or as a
 library that can be integrated into other software.
-
-A [web-based version](https://data.ioos.us/compliance/index.html) of the Compliance
-Checker was developed to enable a broader audience and improve accessibility for the
-checker. With the web version, providers can simply provide a link or upload their
-datasets and get the full suite of capabilities that Compliance Checker offers.
 
 
 It currently supports the following sources and standards:
@@ -39,15 +32,6 @@ If you feel you will need to run a batch of files through the Compliance Checker
 the IOOS Program Office Operations Division for assistance.
 
 
-# [The Compliance Checker Web Tool](https://data.ioos.us/compliance/)
-
-The IOOS Compliance Checker front end companion.
-
-[https://data.ioos.us/compliance/](https://data.ioos.us/compliance/)
-
-Source Code is available on GitHub:
-
-[https://github.com/ioos/compliance-checker-web](https://github.com/ioos/compliance-checker-web)
 
 ## Usage
 Select the test you want to run from the dropdown menu. Then, either upload your dataset or provide a url to a
